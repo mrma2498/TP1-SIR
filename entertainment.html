@@ -1,0 +1,244 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="scriptE.js"></script>
+
+<link rel="stylesheet" href="styleE.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment</title>
+    <link rel="icon" type="image/png" href="https://i0.wp.com/www.forceintellect.com/wp-content/uploads/2018/05/better-icon-REDONE.png">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="">
+          <img src="https://i0.wp.com/www.forceintellect.com/wp-content/uploads/2018/05/better-icon-REDONE.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+          Website name
+          </a>
+      <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="health.html">Health</a>
+          <a class="nav-link active" href="entertainment.html">Entertainment <span class="sr-only">(current)</span></a>
+      </div>
+</head>
+<body>
+<div class="cinema">
+    <h1 id="theatersNow">In Theaters</h1>
+    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/movie-60-165251.png" class="theatersI">
+    <div class="card mb-3" style="max-width: 700px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="posterT" style="width:auto;max-height:320px;  border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="titleT"></h4>
+              <h5 class="ratingT"></h5>
+              <p class="plotT"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 700px; left: 375px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="posterT2" style="width:auto;max-height:320px;  border-bottom-left-radius: 10px; border-top-left-radius: 10px; ">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="titleT2"></h4>
+              <h5 class="ratingT2"></h5>
+              <p class="plotT2"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 700px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="posterT3" style="width:auto;max-height:320px;   border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="titleT3"></h4>
+              <h5 class="ratingT3"></h5>
+              <p class="plotT3"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 700px; left: 375px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="posterT4" style="width:auto;max-height:320px;   border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="titleT4"></h4>
+              <h5 class="ratingT4"></h5>
+              <p class="plotT4"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 700px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="posterT5" style="width:auto;max-height:320px;  border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="titleT5"></h4>
+              <h5 class="ratingT5"></h5>
+              <p class="plotT5"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" style="max-width: 700px; left: 375px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class="posterT6" style="width:auto;max-height:320px; border-bottom-left-radius: 10px; border-top-left-radius: 10px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h4 class="titleT6"></h4>
+              <h5 class="ratingT6"></h5>
+              <p class="plotT6"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+    <!--Movies/TV Series API-->
+    <div class="tvSearch">
+        <img src="https://www.iamherelearning.com/wp-content/uploads/2020/02/Movie-Icon-1-460x406.png" class="movieIcon">
+        <div class="cityForm">
+            <form  class="form-inline">
+                <input id="media-input" class="form-control mr-sm-2" type="search" placeholder="Movie or TV Series" aria-label="search">
+                <button id="submitM" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+
+        <img class="poster">
+        <div class="info">
+            <p class="title"></p>
+            <p class="year"></p>
+            <p class="realease"></p>
+            <p class="runtime"></p>
+            <p class="rated"></p>
+            <p class="genre"></p>
+            <p class="director"></p>
+            <p class="writer"></p>
+            <p class="cast"></p>
+            <p class="plot"></p>
+            <p class="awards"></p>
+            <p class="imdbRating"></p>
+            
+        </div>
+    </div>
+
+    <!--Best Sellers Books API-->
+       <!--Best Sellers Books API-->
+
+  <h1 id="bestSellers">Best Sellers</h1> 
+  <img src="https://cdn2.iconfinder.com/data/icons/education-flat-icons/96/3-512.png" class="booksI">
+  <div class="booksBS"> 
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col mb-4">
+        <div id="booksBS-card" class="card" style="width: 18rem;">
+          <img class="bookImage"  style="width:auto;height:400px;  border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <div class="card-body">
+            <h4 class="titleB"></h4>
+            <h5 class="authorB"></h5>
+            <p class="overviewB"></p>
+            <a id="buy" class="btn btn-info" target="_blank" style="position: absolute; top:660px;">Buy now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div id="booksBS-card" class="card" style="width: 18rem;">
+          <img class="bookImage2" style="width:auto;height:400px;  border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <div class="card-body">
+            <h4 class="titleB2"></h4>
+            <h5 class="authorB2"></h5>
+            <p class="overviewB2"></p>
+            <a id="buy2" class="btn btn-info" target="_blank" style="position: absolute; top:660px;">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div id="booksBS-card" class="card" style="width: 18rem;">
+          <img class="bookImage3" style="width:auto;height:400px;  border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <div class="card-body">
+            <h4 class="titleB3"></h4>
+            <h5 class="authorB3"></h5>
+            <p class="overviewB3"></p>
+            <a id="buy3" class="btn btn-info" target="_blank" style="position: absolute; top:660px;">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div id="booksBS-card" class="card" style="width: 18rem;">
+          <img class="bookImage4" style="width:auto;height:400px;  border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <div class="card-body">
+            <h4 class="titleB4"></h4>
+            <h5 class="authorB4"></h5>
+            <p class="overviewB4"></p>
+            <a id="buy4" class="btn btn-info" target="_blank" style="position: absolute; top:660px;">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div id="booksBS-card" class="card" style="width: 18rem;">
+          <img class="bookImage5" style="width:auto;height:400px;  border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <div class="card-body">
+            <h4 class="titleB5"></h4>
+            <h5 class="authorB5"></h5>
+            <p class="overviewB5"></p>
+            <a id="buy5" class="btn btn-info" target="_blank" style="position: absolute; top:660px;">Buy now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4">
+        <div id="booksBS-card" class="card" style="width: 18rem;">
+          <img class="bookImage6" style="width:auto;height:400px;  border-top-left-radius: 10px; border-top-right-radius: 10px;">
+          <div class="card-body">
+            <h4 class="titleB6"></h4>
+            <h5 class="authorB6"></h5>
+            <p class="overviewB6"></p>
+            <a id="buy6" class="btn btn-info" target="_blank" style="position: absolute; top:660px;">Buy now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>
+
+

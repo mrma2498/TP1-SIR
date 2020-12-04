@@ -1,0 +1,138 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="script.js"></script>
+
+<link rel="stylesheet" href="style.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1</title>
+    <link rel="icon" type="image/png" href="https://i0.wp.com/www.forceintellect.com/wp-content/uploads/2018/05/better-icon-REDONE.png">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+          <img src="https://i0.wp.com/www.forceintellect.com/wp-content/uploads/2018/05/better-icon-REDONE.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+          Website name
+          </a>
+      <div class="navbar-nav">
+          <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="health.html">Health</a>
+          <a class="nav-link" href="entertainment.html">Entertainment</a>
+      </div>
+  </nav>
+</head>
+<body>
+   
+   
+
+   <!--Weather API-->
+    <div class="cityForm">
+        <form  class="form-inline">
+            <input id="city-input" class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Procurar">
+            <button id="submit" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="weather-container">
+        <p class="city"></p>
+            <div class=box>
+              <img class="icon">
+              <p class="weather-des"></p>
+            </div>
+        <p class="temp"></p>
+    </div>
+
+    <div class="mapinfo">
+      <p id="latitude"></p>
+      <p id="longitude"></p>
+    </div>
+
+     <!--Google Maps API-->
+    <div class=map>
+      <iframe width="750" height="450" frameborder="5" style="border:5"
+        src="" allowfullscreen></iframe>
+    </div>
+
+
+    <!--News API-->
+    <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" style="width:auto;max-height:300px;">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+            <a id="read1" class="btn btn-primary" target="_blank" style="position: absolute; top:550px;">Click here to read</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top2" style="width:auto;max-height:300px;">
+          <div class="card-body">
+            <h5 class="card-title2"></h5>
+            <p class="card-text2"></p>
+            <a id="read2" class="btn btn-primary" target="_blank" style="position: absolute; top:550px;">Click here to read</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img class="card-img-top3" style="width:auto;max-height:300px;">
+          <div class="card-body">
+            <h5 class="card-title3"></h5>
+            <p class="card-text3"></p>
+            <a id="read3" class="btn btn-primary" target="_blank" style="position: absolute; top:550px;">Click here to read</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Covid API-->
+      <div class="covid">
+        <p id="titleCovid">Covid-19 Updates</p>
+        <img src="https://infoprodutos.net.br/wp-content/uploads/2020/09/gabinete.png" class="covidI" style="width:auto;max-height:180px;">
+        <div class="confirmedBox">
+          <p class="confirmed">Total confirmed: </p>
+        </div>
+        <div class="recoveredBox">
+          <p class="recovered">Total recovered: </p>
+        </div>
+        <div class="deathBox">
+          <p class="death">Total deaths: </p>
+        </div>
+        <div class="dateBox">
+          <p class="updated">Date: </p>
+        </div>
+        <div class="newConfirmedBox">
+          <p class="newConfirmed">New cases: </p>
+        </div>
+        <div class="newDeathsBox">
+          <p class="newDeaths">New deaths: </p>
+        </div>
+
+          <div class="countryForm">
+          <form  class="form-inline">
+              <input id="country-input" class="form-control mr-sm-2" type="search" placeholder="Country Code(Ex:PT)" aria-label="Search">
+              <button id="submitCode" class="btn btn-outline-primary my-2 my-sm-0" type="submit" onClick="location=index.html">Search</button>
+          </form>
+        </div>
+
+      </div>
+
+      
+
+    
+  
+</body>
+
+</html>
