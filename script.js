@@ -8,12 +8,12 @@ window.onload = function(){
     
     
      
-    let buttonP = document.getElementById("submit").addEventListener("click",getWeather);
-    let buttonCode = document.getElementById("submitCode").addEventListener("click",getCovid);
+    document.getElementById("submit").addEventListener("click",getWeather);
+    document.getElementById("submitCode").addEventListener("click",getCovid);
 
     getNews();
     getInfoLocation();
-    //getCovid();
+    
 }
 
     /*** 
@@ -51,15 +51,18 @@ window.onload = function(){
                 //console.log(city,country,temperature,description,icon);
 
                 $('.icon').attr('src',icon);
-                $('.temp').append(temperature).append('º');
-                $('.weather-des').append(description);
-                $('.city').append(city).append(', ').append(country);
+                $('.temp').html(`${temperature}º`);
+                $('.weather-des').html(`${description}`);
+                $('.city').html(`${city}, ${country}`);
 
                 var url = "https://www.google.com/maps/embed/v1/view?center="+pos+"&zoom=12&key=AIzaSyAx3rZjXJAv1qHwq-N7ypKkG4_5LlVAHVI";
                 $("iframe").attr('src',url);
 
             
-        });    
+        }); 
+        
+     
+                
 
        
     }
@@ -144,7 +147,7 @@ window.onload = function(){
             
 
             const api_key="4e0a9e0ab33eb3673421a2bb0c4aab28";
-            const url2= `http://api.weatherstack.com/current?access_key=${api_key}&query=${position}`; //fetch:ip
+            const url2= `http://api.weatherstack.com/current?access_key=${api_key}&query=${position}`; 
 
             fetch(url2)
                 .then(function(response){
@@ -165,8 +168,9 @@ window.onload = function(){
                 $('.weather-des').append(description);
                 $('.city').append(city).append(', ').append(country);
 
-            
+               
         });  
+       
 
     })
         
@@ -176,7 +180,9 @@ window.onload = function(){
      esses dados */
     function getCovid(event){
 
-        //countryCode="PT"
+        
+
+      
         countryCode = document.getElementById("country-input").value;
 
         event.preventDefault();
@@ -204,15 +210,15 @@ window.onload = function(){
                     var deaths = data.data.today.deaths;
                     
             
-                console.log(totalConfirmed, totalRecovered, totalDeaths, date,newCases,deaths);
+                //console.log(totalConfirmed, totalRecovered, totalDeaths, date,newCases,deaths);
 
                 
-                $('.confirmed').append(totalConfirmed);
-                $('.recovered').append(totalRecovered);
-                $('.death').append(totalDeaths);
-                $('.updated').append(date);
-                $('.newConfirmed').append(newCases);
-                $('.newDeaths').append(deaths);
+                $('.confirmed').html(`Total confirmed: ${totalConfirmed}`);
+                $('.recovered').html(`Total recovered: ${totalRecovered}`);
+                $('.death').html(`Total deaths: ${totalDeaths}`);
+                $('.updated').html(`Date: ${date}`)
+                $('.newConfirmed').html(`New cases: ${newCases}`);
+                $('.newDeaths').html(`New deaths: ${deaths}`);
 
 
 
@@ -220,7 +226,6 @@ window.onload = function(){
         });  
         
         
-
     }
 
     

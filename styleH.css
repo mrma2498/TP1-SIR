@@ -2,29 +2,18 @@ body {
     background-color:#f1f1f1;
     
    }
+   
 
-.mealSuggestions {
-    position: absolute;
-    top: 1000px;
-    background-color: rgb(255, 255, 255);
-    width: 1200px;
-    height: 1200px;
-    border: 15px;
-    border-radius: 10px;
-    padding: 50px;
-    margin: 100px; 
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    font-size: 1.3em;
-    font-weight: bold;
-    line-height: 1.
-}
 
 .card {
     position: relative;
     top: 100px;
     border-color: rgb(187, 187, 187);
     background-color: rgb(255, 255, 255);
+    display: none;
 }
+
+
 
 .foodI {
     display: block;
@@ -38,7 +27,7 @@ body {
     top: 100px;
     background-color: rgb(255, 255, 255);
     width: 500px;
-    height: 600px;
+    height: 650px;
     border: 15px;
     border-radius: 10px;
     padding: 50px;
@@ -69,7 +58,7 @@ body {
     left: 650px;
     background-color: rgb(255, 255, 255);
     width: 500px;
-    height: 600px;
+    height: 650px;
     border: 15px;
     border-radius: 10px;
     padding: 50px;
@@ -97,4 +86,21 @@ body {
 .ibmResults {
     position: relative;
     top:150px;
+}
+
+.mealSuggestions {
+    position: absolute;
+    top: 800px;
+    left: -5vw;
+    background-color: rgb(255, 255, 255);
+    width: 1200px;
+    height: 300px;
+    border: 15px;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 100px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.
 }

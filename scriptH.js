@@ -33,6 +33,14 @@ function getMealPlan(event){
     
     const key='14e486a9e2f24438aefb95fb86b720c2';
     const url= `https://api.spoonacular.com/recipes/complexSearch?minCalories=${minCalories}&maxCalories=${maxCalories}&apiKey=${key}`
+
+
+    var recipeCards = document.getElementsByClassName("card");
+    for (var i=0; i < recipeCards.length; i++) {
+        recipeCards[i].setAttribute("style", "display:inherit;");
+    }
+
+    //document.getElementById("meal").setAttribute("style", "heigth:1600px;");
     
     
     var id,id2,id3,id4,id5,id6;
@@ -75,36 +83,36 @@ function getMealPlan(event){
                 var calories6 = data.results[5].nutrition.nutrients[0].amount;
 
                 console.log(id,id2,id3,id4,id5,id6);
-                
-           
+              
 
-            $('.title1').append(title);
+            $('.title1').html(`${title}`);
             $('.image1').attr('src',image);
-            $('.calories1').append('Amount: ').append(calories).append(' Kcal');
+            $('.calories1').html(`Amount: ${calories} KCal`);
         
 
-            $('.title2').append(title2);
+            $('.title2').html(`${title2}`);
             $('.image2').attr('src',image2);
-            $('.calories2').append('Amount: ').append(calories2).append(' Kcal');
+            $('.calories2').html(`Amount: ${calories2} KCal`);
            
 
-            $('.title3').append(title3);
+            $('.title3').html(`${title3}`);
             $('.image3').attr('src',image3);
-            $('.calories3').append('Amount: ').append(calories3).append(' Kcal');
+            $('.calories3').html(`Amount: ${calories3} KCal`);
 
-            $('.title4').append(title4);
+            $('.title4').html(`${title4}`);
             $('.image4').attr('src',image4);
-            $('.calories4').append('Amount: ').append(calories4).append(' Kcal');
+            $('.calories4').html(`Amount: ${calories4} KCal`);
 
 
-            $('.title5').append(title5);
+            $('.title5').html(`${title5}`);
             $('.image5').attr('src',image5);
-            $('.calories5').append('Amount: ').append(calories5).append(' Kcal');
+            $('.calories5').html(`Amount: ${calories5} KCal`);
 
-            $('.title6').append(title6);
+            $('.title6').html(`${title6}`);
             $('.image6').attr('src',image6);
-            $('.calories6').append('Amount: ').append(calories6).append(' Kcal');
+            $('.calories6').html(`Amount: ${calories6} KCal`);
 
+            document.getElementById("meal").style.height = "1250px";
 
             const url2=`https://api.spoonacular.com/recipes/informationBulk?ids=${id},${id2},${id3},${id4},${id5},${id6}&apiKey=14e486a9e2f24438aefb95fb86b720c2`
            
@@ -120,7 +128,7 @@ function getMealPlan(event){
                     var urlRecipe4=data[3].spoonacularSourceUrl;
                     var urlRecipe5=data[4].spoonacularSourceUrl;
                     var urlRecipe6=data[5].spoonacularSourceUrl;
-
+                   
 
                     console.log(urlRecipe);
                     console.log(urlRecipe2);
@@ -128,14 +136,16 @@ function getMealPlan(event){
                     console.log(urlRecipe4);
                     console.log(urlRecipe5);
                     console.log(urlRecipe6);
+                
 
 
-                    document.getElementById('recipe').setAttribute('href', urlRecipe);   //1 to 3 not working
+                    document.getElementById('recipe').setAttribute('href', urlRecipe);   
                     document.getElementById('recipe2').setAttribute('href', urlRecipe2);
                     document.getElementById('recipe3').setAttribute('href', urlRecipe3);
                     document.getElementById('recipe4').setAttribute('href', urlRecipe4);
                     document.getElementById('recipe5').setAttribute('href', urlRecipe5);
                     document.getElementById('recipe6').setAttribute('href', urlRecipe6);
+                   
                     
         
             });    
@@ -181,9 +191,9 @@ function calculateBMI(event){
         console.log(bmi,health,healthyBMI);
 
 
-        $('.ibm').append("IBM: ").append(bmi);
-        $('.health').append("Health: ").append(health);
-        $('.healthyBMI').append("Ideal BMI Range: ").append(healthyBMI);
+        $('.ibm').html(`IBM: ${bmi}`);
+        $('.health').html(`Health: ${health}`);
+        $('.healthyBMI').html(`Ideal BMI Range: ${healthyBMI}`);
     })  
     .catch(err => {
         console.error(err);
@@ -199,67 +209,52 @@ function calculateCalories(event){
 
 
     //Obtém os inputs do utilizador fornecidos no formulário
-    heigthC = document.getElementById("heigthC").value;
+    heigth = document.getElementById("heigth").value;
     ageC = document.getElementById("ageC").value;
     genderC = document.getElementById("genderC").value;
-    weigthC = document.getElementById("weigthC").value;
+    weight = document.getElementById("weight").value;
+    var intensity = document.getElementById("level").value;
+    var goal = document.getElementById("goal").value;
+   
    
     event.preventDefault();
-    
-    fetch(`https://fitness-calculator.p.rapidapi.com/dailycalory?heigth=${heigthC}&age=${ageC}&gender=${genderC}&weigth=${weigthC}`, {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": "bf678e5d9bmsh77a5fd8f2ed33d9p171431jsn8dfe8f67d090",
-            "x-rapidapi-host": "fitness-calculator.p.rapidapi.com"
-        }
-    })
 
+    console.log(heigth);
+    console.log(weight);
+    
+   
+    fetch(`https://fitness-calculator.p.rapidapi.com/macrocalculator?activitylevel=${intensity}&height=${heigth}&weight=${weight}&gender=${genderC}&age=${ageC}&goal=${goal}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "fitness-calculator.p.rapidapi.com",
+		"x-rapidapi-key": "bf678e5d9bmsh77a5fd8f2ed33d9p171431jsn8dfe8f67d090"
+	    }
+    })
     .then(response => {
+    
         console.log(response);
-        let data = response.json();
-            return data;
+            let data = response.json();
+                return data;
     })
     .then(function(data){
+
         //console.log(data);
-        //var bmr = Math.round(data.bmr);
-        var one = Math.round(data.data["Sedentary: little or no exercise"]);
-        var two = Math.round(data.data["Exercise 1-3 times/week"]);
-        var three = Math.round(data.data["Exercise 4-5 times/week"]);
-        var four = Math.round(data.data["Intense exercise 6-7 times/week"]);
-        var five = Math.round(data.data["Daily exercise or intense exercise 3-4 times/week"]);
-        var six = Math.round(data.data["Very intense exercise daily, or physical job"]);
-        
-        //console.log(one,two,three,four,five,six);
+        var calories = Math.round(data.calorie);
+        console.log(calories);
+
+        $('.caloriesNeed').html(`Calories Goal: ${calories}`);
 
 
-        /*Obtém o valor obtido no select do formulário, no tópico relativo à atividade física realizada
-        */
-        var intensity = document.getElementById("level").value;
-        //console.log(intensity);
+    })
 
-        /**
-         * De acordo com o value atribuido no formulário, determina qual o valor a mostrar, ou seja, as calorias
-         * diárias necessárias de acordo com a atividade física realizada
-         */
-        if (intensity == 1){
-            $('.caloriesNeed').append("Calories Goal: ").append(one).append(" KCal");
-        } else if (intensity == 2){
-            $('.caloriesNeed').append("Calories Goal: ").append(two).append(" KCal");
-        } else if (intensity == 3){
-            $('.caloriesNeed').append("Calories Goal: ").append(three).append(" KCal");
-        } else if (intensity == 4){
-            $('.caloriesNeed').append("Calories Goal: ").append(four).append(" KCal");
-        } else if (intensity == 5){
-            $('.caloriesNeed').append("Calories Goal: ").append(five).append(" KCal");
-        } else {
-            $('.caloriesNeed').append("Calories Goal: ").append(six).append(" KCal");
-        }
-        
-    })  
     .catch(err => {
-        console.error(err);
-    });
-   
-    
+	console.log(err);
+    });  
 
+    
 }
+
+
+
+
+

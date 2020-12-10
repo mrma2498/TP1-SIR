@@ -35,7 +35,99 @@
   </nav>
 </head>
 <body>
-<div class="mealSuggestions">
+
+  <div class="content1" style="position: absolute; margin-left:100px; margin-right:100px">
+
+    <!--Input form for function that estimates number of calories per day--> 
+     <div class="caloriesNeedBox">
+    
+      
+      <h3 style="margin: -15px;">Insert data to calculate your calories needs</h3>
+      <img src="https://cdn4.iconfinder.com/data/icons/fitness-4/63/calories-512.png" class="caloriesI" style="width:auto;max-height:80px;">
+      
+      <form class="inputPerson">
+    
+      <label for="height">Height(cm): </label>
+      <input type="number" id="heigth" name="heigth" min="0" style="margin:10px"><br>
+    
+      <label for="age">Age: </label>
+      <input type="number" id="ageC" name="ageC" min="0"><br>
+    
+      <label for="gender">Gender: </label>
+      <select class="custom-select" id="genderC" style="width: 50%; margin:10px">
+        <option selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option> 
+      </select><br>
+    
+      <label for="weigth">Weigth(kg):</label>
+      <input type="number" id="weight" name="weight" min="0" style="margin:10px"> <br>
+    
+
+      
+      <label for="intensity">Activity Level: </label>
+        <select class="custom-select" id="level" style="margin:10px; width:230px;">
+          <option selected>Choose level of activity</option>
+          <option value="2">Sedentary</option>
+          <option value="3">Exercise 1-3 times/week</option>
+          <option value="4">Exercise 4-5 times/week</option>
+          <option value="5">Daily exercise</option>
+          <option value="6">Intense exercise 6-7 times/week</option>
+          <option value="7">Very intense exercise daily, or physical job</option>
+        </select><br>
+
+        <label for="goal">Goal: </label>
+        <select class="custom-select" id="goal" style="margin:10px; width:300px;">
+          <option selected>Choose your goal</option>
+          <option value="maintain">Maintain Weigth</option>
+          <option value="mildlose">Mild weight loss</option>
+          <option value="weightlose">Weight loss</option>
+          <option value="extremelose">Extreme weight loss</option>
+          <option value="mildgain">Mild weight gain</option>
+          <option value="weightgain">Weight gain</option>
+          <option value="extremegain">Extreme weight gain</option>
+        </select><br>
+
+    
+        <button id="calculateC" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="position: relative; top:10px ">Calculate</button><br>
+        <button id="resetForm" class="btn btn-outline-success my-2 my-sm-0" type="button" onClick="this.form.reset()" style="position: relative; top:25px ">Clear</button>
+
+      </form>
+    
+      <p class="caloriesNeed" style="position: absolute; top:600px;"></p>
+
+     </div>
+    
+     <div class="calculateBMIBox">
+        <h3 style="margin: -15px; width: 90%;">Insert data to calculate your BMI</h3>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61tjuB1%2BybL.png" class="bmiI" style="width:auto;max-height:80px;">
+      
+        <form class="inputBMI">
+    
+          <label for="height">Height(cm): </label>
+          <input type="number" id="heightI" name="heightI" min="0" style="margin:10px"><br>
+        
+          <label for="age">Age: </label>
+          <input type="number" id="ageI" name="ageI" min="0"><br>
+        
+        
+          <label for="weigth">Weigth(kg)</label>
+          <input type="number" id="weigthI" name="weigthI" min="0" style="margin:10px"> <br>
+        
+            <button id="calculateB" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="position: relative; top:40px;">Calculate</button><br>
+            <button id="resetForm2" class="btn btn-outline-success my-2 my-sm-0" type="button" onClick="this.form.reset()" style="position: relative; top:60px;">Clear</button>
+            </form>
+        
+            <div class="ibmResults">
+                <p class="ibm"></p>
+                <p class="health"></p>
+                <p class="healthyBMI"></p>
+            </div>
+    
+     </div>
+
+  
+<div id="meal" class="mealSuggestions">
     
     <h3 >Select calories</h3><br>
     <img src="https://shinnstonnews.com/wp-content/uploads/sites/2/2017/05/food_icon_1494521729.png" class="foodI" style="width:auto;max-height:150px;">
@@ -46,158 +138,88 @@
         <input type="number" id="maxCalories" name="maxCalories" step="10" style="width:100px;">
         <button id="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin:15px;">Search</button>
         
-      </form>
-
-    <div class="row row-cols-3 row-cols-md-3" style="margin-left: 20px;margin-right: 20px;">
-        <div class="col mb-4">
-          <div class="card">
-            <img class="image1">
-            <div class="card-body">
-              <h5 class="title1"></h5>
-              <p class="calories1"></p>
-              <a id="recipe" class="btn btn-info" target="_blank">See recipe</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col mb-4">
-          <div class="card">
-            <img class="image2">
-            <div class="card-body">
-              <h5 class="title2"></h5>
-              <p class="calories2"></p>
-              <a id="recipe2" class="btn btn-info" target="_blank">See recipe</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col mb-4">
-          <div class="card">
-            <img class="image3">
-            <div class="card-body">
-              <h5 class="title3"></h5>
-              <p class="calories3"></p>
-              <a id="recipe3" class="btn btn-info" target="_blank">See recipe</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col mb-4">
-          <div class="card">
-            <img class="image4">
-            <div class="card-body">
-              <h5 class="title4"></h5>
-              <p class="calories4"></p>
-              <a id="recipe4" class="btn btn-info" target="_blank">See recipe</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col mb-4">
-            <div class="card">
-              <img class="image5">
-              <div class="card-body">
-                <h5 class="title5"></h5>
-                <p class="calories5"></p>
-                <a id="recipe5" class="btn btn-info" target="_blank">See recipe</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="card">
-              <img class="image6">
-              <div class="card-body">
-                <h5 class="title6"></h5>
-                <p class="calories6"></p>
-                <a id="recipe6" class="btn btn-info" target="_blank">See recipe</a>
-              </div>
-            </div>
-          </div>
-
-          
-      </div>
- </div>
-
-<div class="content1" style="position: absolute; margin-left:100px; margin-right:100px">
-
-<!--Input form for function that estimates number of calories per day--> 
- <div class="caloriesNeedBox">
-
-  
-  <h3 style="margin: -15px;">Insert data to calculate your calories needs</h3>
-  <img src="https://cdn4.iconfinder.com/data/icons/fitness-4/63/calories-512.png" class="caloriesI" style="width:auto;max-height:80px;">
-  
-  <form class="inputPerson">
-
-  <label for="height">Height(cm): </label>
-  <input type="number" id="heigthC" name="heightC" min="0" style="margin:10px"><br>
-
-  <label for="age">Age: </label>
-  <input type="number" id="ageC" name="ageC" min="0"><br>
-
-  <label for="gender">Gender: </label>
-  <select class="custom-select" id="genderC" style="width: 50%; margin:10px">
-    <option selected>Gender</option>
-    <option value="male">Male</option>
-    <option value="female">Female</option> 
-  </select><br>
-
-  <label for="weigth">Weigth(kg)</label>
-  <input type="number" id="weigthC" name="weigthC" min="0" style="margin:10px"> <br>
-
- 
-    <select class="custom-select" id="level" style="margin-top:10px ">
-      <option selected>Choose level of activity</option>
-      <option value="1">Sedentary</option>
-      <option value="2">Exercise 1-3 times/week</option>
-      <option value="3">Exercise 4-5 times/week</option>
-      <option value="4">Intense exercise 6-7 times/week</option>
-      <option value="5">Daily exercise</option>
-      <option value="6">Very intense exercise daily, or physical job</option>
-    </select><br><br>
-
-    <button id="calculateC" class="btn btn-outline-success my-2 my-sm-0" type="submit">Calculate</button>
-
     </form>
 
-    
-    <p class="caloriesNeed" style="position: absolute; top:510px;"></p>
- </div>
 
- <div class="calculateBMIBox">
-    <h3 style="margin: -15px; width: 90%;">Insert data to calculate your BMI</h3>
-    <img src="https://images-na.ssl-images-amazon.com/images/I/61tjuB1%2BybL.png" class="bmiI" style="width:auto;max-height:80px;">
-  
-    <form class="inputBMI">
-
-      <label for="height">Height(cm): </label>
-      <input type="number" id="heightI" name="heightI" min="0" style="margin:10px"><br>
-    
-      <label for="age">Age: </label>
-      <input type="number" id="ageI" name="ageI" min="0"><br>
-    
-    
-      <label for="weigth">Weigth(kg)</label>
-      <input type="number" id="weigthI" name="weigthI" min="0" style="margin:10px"> <br>
-    
-        <button id="calculateB" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="position: relative; top:40px;">Calculate</button>
-    
-        </form>
-    
-        <div class="ibmResults">
-            <p class="ibm"></p>
-            <p class="health"></p>
-            <p class="healthyBMI"></p>
+    <div id="cards" class="card-deck">
+      <div class="card" id="card1">
+        <img class="image1" style="width:auto;max-height:300px;">
+        <div class="card-body">
+          <h5 class="title1"></h5>
+          <p class="calories1"></p>
+          <a id="recipe" class="btn btn-info" target="_blank" >See recipe</a>
         </div>
+      </div>
 
- </div>
+      <div class="card">
+        <img class="image2" style="width:auto;max-height:300px;">
+        <div class="card-body">
+          <h5 class="title2"></h5>
+          <p class="calories2"></p>
+          <a id="recipe2" class="btn btn-info" target="_blank" >See recipe</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img class="image3" style="width:auto;max-height:300px;">
+        <div class="card-body">
+          <h5 class="title3"></h5>
+          <p class="calories3"></p>
+          <a id="recipe3" class="btn btn-info" target="_blank" >See recipe</a>
+        </div>
+      </div>
+
+  
+
+    </div>
+
+
+    <div class="card-deck" style="margin-top: 50px;">
+      <div class="card">
+        <img class="image4" style="width:auto;max-height:300px;">
+        <div class="card-body">
+          <h5 class="title4"></h5>
+          <p class="calories4"></p>
+          <a id="recipe4" class="btn btn-info" target="_blank">See recipe</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="image5" style="width:auto;max-height:300px;">
+        <div class="card-body">
+          <h5 class="title5"></h5>
+          <p class="calories5"></p>
+          <a id="recipe5" class="btn btn-info" target="_blank" >See recipe</a>
+        </div>
+      </div>
+      
+      <div class="card">
+        <img class="image6" style="width:auto;max-height:300px;">
+        <div class="card-body">
+          <h5 class="title6"></h5>
+          <p class="calories6"></p>
+          <a id="recipe6" class="btn btn-info" target="_blank" >See recipe</a>
+        </div>
+      </div>
+
+      
+
+    </div>
+
+  </div>
+
+
+
 
 </div>
 
 <!---PUT like a HEADER saying FOOOD and ICON-->
 
+
+
+
 </body>
+
 
 
 </html>

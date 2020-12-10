@@ -106,6 +106,12 @@ function getMovie(event){
 
     tvsearch = document.getElementById("media-input").value;
 
+    /**Caso o valor do input seja nulo, a função não retorna nada*/
+    if( document.getElementById('media-input').value === '' ){
+        alert('The search bar is empty!');
+        return;
+    }
+
     event.preventDefault();
 
     const key='e13b7a2c';
@@ -135,25 +141,29 @@ function getMovie(event){
                 var imdbRating = data.imdbRating; 
 
                    
-                $('.title').append("Title: ").append(title);
-                $('.year').append("Year: ").append(year);
-                $('.realease').append("Date of realease: ").append(realease);
-                $('.runtime').append("Runtime: ").append(runtime);
-                $('.rated').append("Rated: ").append(rated);
-                $('.genre').append("Genre: ").append(genre);
-                $('.director').append("Director: ").append(director);
-                $('.writer').append("Writer: ").append(writer);
-                $('.cast').append("Cast: ").append(cast);
-                $('.plot').append("Plot: ").append(plot);
-                $('.awards').append("Awards: ").append(awards);
+                $('.title').html(`Title: ${title}`);
+                $('.year').html(`Year: ${year}`);
+                $('.realease').html(`Date of realease: ${realease}`);
+                $('.runtime').html(`Runtime: ${runtime}`);
+                $('.rated').html(`Rated: ${rated}`);
+                $('.genre').html(`Genre: ${genre}`);
+                $('.director').html(`Director: ${director}`);
+                $('.writer').html(`Writer: ${writer}`);
+                $('.cast').html(`Cast: ${cast}`);
+                $('.plot').html(`Plot: ${plot}`);
+                $('.awards').html(`Awards: ${awards}`);
 
                 //A inserção da estrela junto da avaliação do IMDB é realizada através do append de uma imagem
-                $('.imdbRating').append("IMDB Rating: ").append(imdbRating).append('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png" style="width:auto; max-height:23px; margin:3px; position: relative; top: -2px;" />');;
+                $('.imdbRating').html(`IMDB Rating: ${imdbRating}`).append('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png" style="width:auto; max-height:23px; margin:3px; position: relative; top: -2px;" />');;
                 $('.poster').attr('src',poster);
+
+                //Apaga o valor do input após pesquisar e obter a sua informação
+                document.getElementById("media-input").value = '';
                 
-          
+                
+                
         });    
-        delete tvsearch;
+       
 
 }
 
@@ -261,13 +271,13 @@ function getBooksBS(){
 
 //TO DO'S
 
-//MOVIES REVIEWS(connect with users input)(only works with movies)[3]???????????
+//MOVIES REVIEWS(connect with users input)(only works with movies)[3]
 //https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=ne8GIs9OtIxio5VBMp5eSwhMTXR6DCx8
 //NY Key = ne8GIs9OtIxio5VBMp5eSwhMTXR6DCx8
 //Disponibilizar 2/3 reviews, baseado no input inserido pelo utilizador, incluindo um sumário no entanto contendo um botão para redirecionar 
 //para a review completa
 
-//MOVIES REVIEWS OR BOOKS REVIEWS???(connect with users input)(only works with movies)[3]??????
+
 
 
 
