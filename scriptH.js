@@ -35,12 +35,15 @@ function getMealPlan(event){
     const url= `https://api.spoonacular.com/recipes/complexSearch?minCalories=${minCalories}&maxCalories=${maxCalories}&apiKey=${key}`
 
 
+    /**Mostra os cards das receitas quando esta função é executada*/
     var recipeCards = document.getElementsByClassName("card");
     for (var i=0; i < recipeCards.length; i++) {
         recipeCards[i].setAttribute("style", "display:inherit;");
     }
 
-    //document.getElementById("meal").setAttribute("style", "heigth:1600px;");
+     /**Aumenta o tamanho(altura) do container quando esta função é executada*/    
+     document.getElementById("meal").style.height = "1250px";
+
     
     
     var id,id2,id3,id4,id5,id6;
@@ -112,8 +115,8 @@ function getMealPlan(event){
             $('.image6').attr('src',image6);
             $('.calories6').html(`Amount: ${calories6} KCal`);
 
-            document.getElementById("meal").style.height = "1250px";
 
+        
             const url2=`https://api.spoonacular.com/recipes/informationBulk?ids=${id},${id2},${id3},${id4},${id5},${id6}&apiKey=14e486a9e2f24438aefb95fb86b720c2`
            
             fetch(url2)
@@ -155,10 +158,9 @@ function getMealPlan(event){
 
 }
 
-/** Utiliza a API fitness-calculator para calcular o valor BMI e retornar a informação relativa ao resultado obtido.
+/** Utiliza a API fitness-calculator para calcular o valor IMC e retornar a informação relativa ao resultado obtido.
  * 
- * ATENÇÃO: Adicionar introdução de inputs age, height e weight
- * Fazer BMIbox -> colocar ao lado da outra -> Criar variáveis -> etc 
+ * 
 */
 function calculateBMI(event){
 
@@ -201,7 +203,8 @@ function calculateBMI(event){
 
 }
 /** 
- * Utiliza a API fitness-calculator para calcular as calories necessárias diárias, de acordo com o tipo de atividade física realizada.
+ * Utiliza a API fitness-calculator para calcular as calories necessárias diárias, de acordo com o tipo de atividade 
+ * física realizada, e o objetivo pretendido(perda, aumento ou manutenção de peso). 
  * 
 */
 
@@ -238,12 +241,9 @@ function calculateCalories(event){
     })
     .then(function(data){
 
-        //console.log(data);
-        var calories = Math.round(data.calorie);
-        console.log(calories);
+        var calories = Math.round(data.calorie); //Arrendonda o valor das calorias a um inteiro.  
 
         $('.caloriesNeed').html(`Calories Goal: ${calories}`);
-
 
     })
 

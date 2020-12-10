@@ -21,11 +21,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health</title>
-    <link rel="icon" type="image/png" href="https://i0.wp.com/www.forceintellect.com/wp-content/uploads/2018/05/better-icon-REDONE.png">
+    <link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2014/04/02/17/00/globe-307634_960_720.png">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-          <img src="https://i0.wp.com/www.forceintellect.com/wp-content/uploads/2018/05/better-icon-REDONE.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-          Website name
+          <img src="https://cdn.pixabay.com/photo/2014/04/02/17/00/globe-307634_960_720.png" width="30" height="30" style="margin-right:8px" class="d-inline-block align-top" alt="" loading="lazy">
+          Click World
           </a>
       <div class="navbar-nav">
           <a class="nav-link" href="index.html">Home</a>
@@ -38,7 +38,7 @@
 
   <div class="content1" style="position: absolute; margin-left:100px; margin-right:100px">
 
-    <!--Input form for function that estimates number of calories per day--> 
+    <!--Input form para a função que calcula o número de calorias a consumir por dia--> 
      <div class="caloriesNeedBox">
     
       
@@ -98,6 +98,9 @@
 
      </div>
     
+
+
+     <!--Input form para calcular o valor do IMC--> 
      <div class="calculateBMIBox">
         <h3 style="margin: -15px; width: 90%;">Insert data to calculate your BMI</h3>
         <img src="https://images-na.ssl-images-amazon.com/images/I/61tjuB1%2BybL.png" class="bmiI" style="width:auto;max-height:80px;">
@@ -125,20 +128,25 @@
             </div>
     
      </div>
+     
+  </div>    
 
+  <!--Gere um conjunto de receitas entre os valores do intervalo de calorias selecionado--> 
+<h1 id="food">Food</h1> 
+<img src="https://www.flaticon.com/svg/static/icons/svg/1205/1205747.svg" class="foodTitleI">
   
-<div id="meal" class="mealSuggestions">
+      <div id="meal" class="mealSuggestions">
     
-    <h3 >Select calories</h3><br>
-    <img src="https://shinnstonnews.com/wp-content/uploads/sites/2/2017/05/food_icon_1494521729.png" class="foodI" style="width:auto;max-height:150px;">
-    <form class="form-inline my-2 my-lg-0"> 
-        <label for="min">Min:</label>
-        <input type="number" id="minCalories" name="minCalories" min="0" step="10" style="width:100px; margin:5px" >
-        <label for="max" style="margin:10px;">Max:</label>
-        <input type="number" id="maxCalories" name="maxCalories" step="10" style="width:100px;">
-        <button id="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin:15px;">Search</button>
+        <h3 >Select calories</h3><br>
+        <img src="https://shinnstonnews.com/wp-content/uploads/sites/2/2017/05/food_icon_1494521729.png" class="foodI" style="width:auto;max-height:150px;">
+        <form class="form-inline my-2 my-lg-0"> 
+            <label for="min">Min:</label>
+            <input type="number" id="minCalories" name="minCalories" min="0" step="10" style="width:100px; margin:5px" >
+            <label for="max" style="margin:10px;">Max:</label>
+            <input type="number" id="maxCalories" name="maxCalories" step="10" style="width:100px;">
+            <button id="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin:15px;">Search</button>
         
-    </form>
+      </form>
 
 
     <div id="cards" class="card-deck">
@@ -168,9 +176,6 @@
           <a id="recipe3" class="btn btn-info" target="_blank" >See recipe</a>
         </div>
       </div>
-
-  
-
     </div>
 
 
@@ -208,18 +213,9 @@
 
   </div>
 
-
-
-
 </div>
-
-<!---PUT like a HEADER saying FOOOD and ICON-->
-
-
 
 
 </body>
-
-
 
 </html>

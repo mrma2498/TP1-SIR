@@ -269,14 +269,6 @@ function getBooksBS(){
 
 }
 
-//TO DO'S
-
-//MOVIES REVIEWS(connect with users input)(only works with movies)[3]
-//https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=godfather&api-key=ne8GIs9OtIxio5VBMp5eSwhMTXR6DCx8
-//NY Key = ne8GIs9OtIxio5VBMp5eSwhMTXR6DCx8
-//Disponibilizar 2/3 reviews, baseado no input inserido pelo utilizador, incluindo um sumário no entanto contendo um botão para redirecionar 
-//para a review completa
-
 
 
 

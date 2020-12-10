@@ -61,24 +61,18 @@ window.onload = function(){
             
         }); 
         
-     
-                
-
        
     }
 
+    /** Retorna um conjunto de notícias */
     
     function getNews(){
         
-         
-
         const key='0bc5214c1c9248d0afaf5fb3adaf4656';
         const url= `https://newsapi.org/v2/top-headlines?language=en&apiKey=${key}`
         
         
-      
-  
-            fetch(url)
+        fetch(url)
                 .then(function(response){
                     let data = response.json();
                 return data;
